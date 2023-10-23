@@ -1,36 +1,39 @@
-/********************Trie par categorie homme*****************************/
+/********************Tri par sexe homme*****************************/
 
-let trie_categorie_homme = tableau_produits.filter((produit, categorie) => {
-  categorie = "homme";
-  return produit.categorie === categorie;
+let tri_categorie_homme = sanitizeProductsList.filter((produit, sexe) => {
+  sexe = "homme";
+  return produit.sexe === sexe;
 });
+/********************Tri par sexe femme*****************************/
 
-/********************Trie par categorie femme*****************************/
-
-let trie_categorie_femme = tableau_produits.filter((produit, categorie) => {
-  categorie = "femme";
-  return produit.categorie === categorie;
+let tri_categorie_femme = sanitizeProductsList.filter((produit, sexe) => {
+  sexe = "femme";
+  return produit.sexe === sexe;
 });
+/*************************Tri par prix croissant*************************/
 
-/*************************Trie par prix croissant*************************/
-
-let trie_categorie_prix_croissant = tableau_produits.sort(function compare(
+let tri_categorie_prix_croissant = sanitizeProductsList.sort(function compare(
   prix_indice_actuel,
   prix_indice_plus_un
 ) {
-  if (prix_indice_actuel.prix < prix_indice_plus_un.prix) return -1;
-  if (prix_indice_actuel.prix > prix_indice_plus_un.prix) return 1;
+  if (prix_indice_actuel.price < prix_indice_plus_un.price) return -1;
+  if (prix_indice_actuel.price > prix_indice_plus_un.price) return 1;
   return 0;
 });
-console.log(trie_categorie_prix_croissant);
+/*************************Tri par prix decroissant*************************/
 
-/*************************Trie par prix decroissant*************************/
-
-let trie_categorie_prix_decroissant = tableau_produits.sort(function compare(
+let tri_categorie_prix_decroissant = sanitizeProductsList.sort(function compare(
   prix_indice_actuel,
   prix_indice_plus_un
 ) {
-  if (prix_indice_actuel.prix > prix_indice_plus_un.prix) return -1;
-  if (prix_indice_actuel.prix < prix_indice_plus_un.prix) return 1;
+  if (prix_indice_actuel.price > prix_indice_plus_un.price) return -1;
+  if (prix_indice_actuel.price < prix_indice_plus_un.price) return 1;
+  return 0;
+});
+/******************************Tri par marque******************************/
+
+let tri_titre = sanitizeProductsList.sort(function compare(marque_indice_actuel, marque_indice_plus_un) {
+  if (marque_indice_actuel.brand < marque_indice_plus_un.brand) return -1;
+  if (marque_indice_actuel.brand > marque_indice_plus_un.brand) return 1;
   return 0;
 });
