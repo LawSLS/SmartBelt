@@ -1,5 +1,17 @@
 const productListContainer = document.getElementById("containerProductList");
 
+$("#logo").animate(
+  {
+    opacity: 1,
+    height: "40%",
+    width: "10%",
+  },
+  700,
+  function () {
+    // Animation complete.
+  }
+);
+
 // Tous les produits
 let products = [
   {
@@ -143,3 +155,14 @@ sanitizeProductsList.forEach((product) => {
 
   productListContainer.appendChild(divCol);
 });
+
+$(".card").animate(
+  {
+    opacity: 1,
+    width: "90%",
+  },
+  800,
+  function () {
+    // Animation complete.
+  }
+);
