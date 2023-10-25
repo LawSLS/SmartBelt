@@ -3,6 +3,7 @@ const productListContainer = document.getElementById("containerProductList");
 // Tous les produits
 let products = [
   {
+    id:0,
     title: "Ceinture en cuir Marron",
     img: "./img/ceintureFemmeGucci.jpg",
     description: "Ceinture en cuir marron",
@@ -11,6 +12,7 @@ let products = [
     oldPrice: "",
   },
   {
+    id:1,
     title: "Ceinture en cuir Marron",
     img: "./img/ceintureFemmeGucci.jpg",
     description: "Ceinture Gucci",
@@ -19,6 +21,7 @@ let products = [
     oldPrice: "",
   },
   {
+    id:2,
     title: "Ceinture de styliste",
     img: "./img/ceintureDeStylistePourHomme.jpg",
     description: "Ceinture fomme styliste",
@@ -27,6 +30,7 @@ let products = [
     oldPrice: "",
   },
   {
+    id:3,
     title: "Ceinture en cuir Marron",
     img: "./img/ceintureVintageFemme.jpg",
     description: "Ceinture vintage femme",
