@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "title": "Ceinture en cuir Marron",
+      "img": "./img/ceintureFemmeGucci.jpg",
+      "description": "Ceinture en cuir marron",
+      "categorie": "homme",
+      "price": 99,
+      "oldPrice": ""
+    },
+    {
+      "title": "Ceinture en cuir Marron",
+      "img": "./img/ceintureFemmeGucci.jpg",
+      "description": "Ceinture Gucci",
+      "categorie": "femme",
+      "price": 120,
+      "oldPrice": ""
+    },
+    {
+      "title": "Ceinture de styliste",
+      "img": "./img/ceintureDeStylistePourHomme.jpg",
+      "description": "Ceinture fomme styliste",
+      "categorie": "ceinture",
+      "price": 200,
+      "oldPrice": ""
+    },
+    {
+      "title": "Ceinture en cuir Marron",
+      "img": "./img/ceintureVintageFemme.jpg",
+      "description": "Ceinture vintage femme",
+      "categorie": "ceinture",
+      "price": 80,
+      "oldPrice": ""
+    }
+  ]
+}
