@@ -108,6 +108,7 @@ sanitizeProductsList.forEach((product) => {
       <div class="card-body">
         <h5 class="card-title">${product.title}</h5>
         <p class="card-text">${product.description}</p>
+        <p class="fw-bold" >${product.price}€</p>
         <button id=""addToCart class="btn position-absolute bottom-0 end-0">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
             <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
