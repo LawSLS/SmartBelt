@@ -31,6 +31,14 @@
       "categorie": "ceinture",
       "price": 80,
       "oldPrice": ""
+    },
+    {
+      "title": "Sacs Louis Vuitton",
+      "img": "./img/lvSacs.png",
+      "description": "Sac femme",
+      "categorie": "sac",
+      "price": 80,
+      "oldPrice": ""
     }
   ]
 }
