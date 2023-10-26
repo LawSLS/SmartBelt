@@ -22,11 +22,14 @@ async function fetcher(link) {
 
 prod = [];
 
+cart = [];
+
 to_display_products = [];
 function clean_products_card() {
   let card = $(".card_parent");
   card.remove();
 }
+
 function display_products_card() {
   to_display_products.forEach((product) => {
     //creer une colonne
@@ -41,7 +44,7 @@ function display_products_card() {
       <h5 class="card-title">${product.title}</h5>
       <p class="card-text">${product.description}</p>
       <p class="fw-bold" >${product.price}€</p>
-      <button id="addToCart" class="btn position-absolute bottom-0 end-0">
+      <button class="btn position-absolute bottom-0 end-0 addToCart">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus" viewBox="0 0 16 16">
           <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z"/>
           <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
@@ -76,6 +79,53 @@ function tri_prix_ordre_decroissant() {
     return 0;
   });
   display_products_card();
+}
+
+function displayCartProduct(customerCart) {
+  const cartContainer = document.querySelector("#cart");
+  let divCart = document.createElement("div");
+  divCart.classList.add("card-body");
+  divCart.classList.add("p-4");
+
+  // imagecart = customerCart[0].img;
+  for (let i = 0; i < customerCart.length; i++) {
+    const currentProduct = customerCart[i];
+
+    divCart.innerHTML = `
+    <div class="row d-flex justify-content-between align-items-center">
+    <div class="col-md-2 col-lg-2 col-xl-2">
+      <img
+        src="${currentProduct.img}"
+        class="img-fluid rounded-3" alt="Cotton T-shirt" />
+    </div>
+    <div class="col-md-3 col-lg-3 col-xl-3">
+      <p class="lead fw-normal mb-2">${currentProduct.title}</p>
+    </div>
+    <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+      <button class="btn btn-link px-2"
+        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+        <i class="fas fa-minus"></i>
+      </button>
+  
+      <input id="form1" min="0" name="quantity" value="0" type="number"
+        class="form-control form-control-sm" />
+  
+      <button class="btn btn-link px-2"
+        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+      <h5 class="mb-0">${currentProduct.price}€</h5>
+    </div>
+    <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+      <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+    </div>
+  </div>
+  </div>`;
+
+    cartContainer.appendChild(divCart);
+  }
 }
 
 fetcher(url)
@@ -176,6 +226,18 @@ fetcher(url)
         }
       });
       display_products_card();
+    });
+
+    $(".addToCart").click(function () {
+      const productSelect = $(this.offsetParent);
+
+      const imgProduct = productSelect[0].children[0].src;
+      const title = productSelect[0].children[1].children[0].innerText;
+      const price = productSelect[0].children[1].children[2].innerText;
+
+      const productToAdd = { img: imgProduct, title: title, price: price };
+      cart.push(productToAdd);
+      displayCartProduct(cart);
     });
 
     $(".card").animate(
