@@ -11,98 +11,75 @@ $("#logo").animate(
   }
 );
 
-// Tous les produits
-let products = [
-  {
-    title: "Ceinture en cuir Marron",
-    img: "./img/ceintureFemmeGucci.jpg",
-    description: "Ceinture en cuir marron",
-    categorie: "homme",
-    price: 99,
-    oldPrice: "",
-  },
-  {
-    title: "Ceinture en cuir Marron",
-    img: "./img/ceintureFemmeGucci.jpg",
-    description: "Ceinture Gucci",
-    categorie: "femme",
-    price: 120,
-    oldPrice: "",
-  },
-  {
-    title: "Ceinture de styliste",
-    img: "./img/ceintureDeStylistePourHomme.jpg",
-    description: "Ceinture fomme styliste",
-    categorie: "ceinture",
-    price: 200,
-    oldPrice: "",
-  },
-  {
-    title: "Ceinture en cuir Marron",
-    img: "./img/ceintureVintageFemme.jpg",
-    description: "Ceinture vintage femme",
-    categorie: "ceinture",
-    price: 80,
-    oldPrice: "",
-  },
-];
+const url = "http://localhost:3000/products";
 
-//function pour filtrer les produits sans propriété ou erronés
-function productsWithoutError(productsArray) {
-  function titleError(product) {
-    const conditionError = [
-      product.title == "",
-      typeof product.title != "string",
-    ];
-    return conditionError.includes(true);
-  }
-
-  function imgError(product) {
-    const conditionError = [product.img == "", typeof product.img != "string"];
-    return conditionError.includes(true);
-  }
-
-  function descriptionError(product) {
-    const conditionError = [
-      product.description == "",
-      typeof product.description != "string",
-    ];
-
-    return conditionError.includes(true);
-  }
-
-  function priceError(product) {
-    const conditionError = [
-      typeof product.price != "number",
-      product.price <= 0,
-    ];
-    return conditionError.includes(true);
-  }
-
-  let productslist;
-
-  productslist = productsArray.filter((product) => {
-    const conditionError = [
-      titleError(product),
-      imgError(product),
-      descriptionError(product),
-      priceError(product),
-    ];
-
-    return !conditionError.includes(true);
-  });
-
-  return productslist;
+async function fetcher(link) {
+  let request = await fetch(link);
+  let data = await request.json();
+  return data;
 }
 
-const sanitizeProductsList = productsWithoutError(products);
+fetcher(url)
+  .then((products) => {
+    //function pour filtrer les produits sans propriété ou erronés
+    function productsWithoutError(productsArray) {
+      function titleError(product) {
+        const conditionError = [
+          product.title == "",
+          typeof product.title != "string",
+        ];
+        return conditionError.includes(true);
+      }
 
-sanitizeProductsList.forEach((product) => {
-  //creer une colonne
-  let divCol = document.createElement("div");
-  divCol.classList.add("col");
+      function imgError(product) {
+        const conditionError = [
+          product.img == "",
+          typeof product.img != "string",
+        ];
+        return conditionError.includes(true);
+      }
 
-  divCol.innerHTML = `
+      function descriptionError(product) {
+        const conditionError = [
+          product.description == "",
+          typeof product.description != "string",
+        ];
+
+        return conditionError.includes(true);
+      }
+
+      function priceError(product) {
+        const conditionError = [
+          typeof product.price != "number",
+          product.price <= 0,
+        ];
+        return conditionError.includes(true);
+      }
+
+      let productslist;
+
+      productslist = productsArray.filter((product) => {
+        const conditionError = [
+          titleError(product),
+          imgError(product),
+          descriptionError(product),
+          priceError(product),
+        ];
+
+        return !conditionError.includes(true);
+      });
+
+      return productslist;
+    }
+
+    const sanitizeProductsList = productsWithoutError(products);
+
+    sanitizeProductsList.forEach((product) => {
+      //creer une colonne
+      let divCol = document.createElement("div");
+      divCol.classList.add("col");
+
+      divCol.innerHTML = `
   <div class="card shadow border-0">
      <img class="card-img-top" src='${product.img}'/>
       <div class="card-body">
@@ -118,16 +95,19 @@ sanitizeProductsList.forEach((product) => {
       </div>
   </div>`;
 
-  productListContainer.appendChild(divCol);
-});
-
-$(".card").animate(
-  {
-    opacity: 1,
-    width: "90%",
-  },
-  800,
-  function () {
-    // Animation complete.
-  }
-);
+      productListContainer.appendChild(divCol);
+    });
+    $(".card").animate(
+      {
+        opacity: 1,
+        width: "90%",
+      },
+      800,
+      function () {
+        // Animation complete.
+      }
+    );
+  })
+  .catch((error) => {
+    console.log(error.message);
+  });
