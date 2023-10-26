@@ -41,11 +41,53 @@
       "oldPrice": ""
     },
     {
+      "id": 4,
       "title": "Sacs Louis Vuitton",
       "img": "./img/lvSacs.png",
       "description": "Sac femme",
+      "sexe": "femme",
       "categorie": "sac",
       "price": 80,
+      "oldPrice": ""
+    },
+    {
+      "id": 5,
+      "title": "Montre Zenith Homme",
+      "img": "./img/montreZenithHomme.png",
+      "description": "Montre Homme",
+      "sexe": "homme",
+      "categorie": "Montre",
+      "price": 4000,
+      "oldPrice": ""
+    },
+    {
+      "id": 5,
+      "title": "Montre Rolex Homme",
+      "img": "./img/rolexhomme.jpg",
+      "description": "Montre Homme",
+      "sexe": "homme",
+      "categorie": "Montre",
+      "price": 20000,
+      "oldPrice": ""
+    },
+    {
+      "id": 6,
+      "title": "Montre Dior Femme",
+      "img": "./img/diorfemme.jpg",
+      "description": "Montre Femme",
+      "sexe": "femme",
+      "categorie": "Montre",
+      "price": 1900,
+      "oldPrice": ""
+    },
+    {
+      "id": 7,
+      "title": "Montre Jaeger Lecoultre Homme",
+      "img": "./img/cartierfemme.jpg",
+      "description": "Montre Femme",
+      "sexe": "femme",
+      "categorie": "Montre",
+      "price": 2300,
       "oldPrice": ""
     }
   ]
