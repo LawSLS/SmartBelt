@@ -12,6 +12,7 @@ $("#logo").animate(
 );
 
 const url = "http://localhost:3000/products";
+const btn_triDecroissant = document.querySelector("#triDecroissant");
 
 async function fetcher(link) {
   let request = await fetch(link);
@@ -24,7 +25,6 @@ prod = [];
 to_display_products = [];
 function clean_products_card() {
   let card = $(".card_parent");
-  console.log(card);
   card.remove();
 }
 function display_products_card() {
@@ -52,6 +52,30 @@ function display_products_card() {
 
     productListContainer.appendChild(divCol);
   });
+}
+function tri_prix_ordre_croissant() {
+  clean_products_card();
+  to_display_products = prod.sort(function compare(
+    prix_indice_actuel,
+    prix_indice_plus_un
+  ) {
+    if (prix_indice_actuel.price < prix_indice_plus_un.price) return -1;
+    if (prix_indice_actuel.price > prix_indice_plus_un.price) return 1;
+    return 0;
+  });
+  display_products_card();
+}
+function tri_prix_ordre_decroissant() {
+  clean_products_card();
+  to_display_products = prod.sort(function compare(
+    prix_indice_actuel,
+    prix_indice_plus_un
+  ) {
+    if (prix_indice_actuel.price > prix_indice_plus_un.price) return -1;
+    if (prix_indice_actuel.price < prix_indice_plus_un.price) return 1;
+    return 0;
+  });
+  display_products_card();
 }
 
 fetcher(url)
@@ -120,6 +144,17 @@ fetcher(url)
 
     to_display_products = prod;
     display_products_card();
+
+    //tri prix order croissant
+    const btn_triCroissant = document.querySelector("#triCroissant");
+    btn_triCroissant.addEventListener("click", () => {
+      tri_prix_ordre_croissant();
+    });
+    //tri prix order decroissant
+    const btn_triDecroissant = document.querySelector("#triDecroissant");
+    btn_triDecroissant.addEventListener("click", () => {
+      tri_prix_ordre_decroissant();
+    });
 
     $(".card").animate(
       {
