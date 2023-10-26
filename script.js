@@ -77,6 +77,16 @@ function tri_prix_ordre_decroissant() {
   });
   display_products_card();
 }
+function tri_par_sexe_femme() {
+  clean_products_card();
+  to_display_products = prod.filter((produit) => produit.sexe === "femme");
+  display_products_card();
+}
+function tri_par_sexe_homme() {
+  clean_products_card();
+  to_display_products = prod.filter((produit) => produit.sexe === "homme");
+  display_products_card();
+}
 
 fetcher(url)
   .then((products) => {
@@ -155,7 +165,16 @@ fetcher(url)
     btn_triDecroissant.addEventListener("click", () => {
       tri_prix_ordre_decroissant();
     });
-
+    //tri par sexe femme
+    const btn_trifemme = document.querySelector("#trifemme");
+    btn_trifemme.addEventListener("click", () => {
+      tri_par_sexe_femme();
+    });
+    //tri par sexe homme
+    const btn_trihomme = document.querySelector("#trihomme");
+    btn_trihomme.addEventListener("click", () => {
+      tri_par_sexe_homme();
+    });
     $(".card").animate(
       {
         opacity: 1,
