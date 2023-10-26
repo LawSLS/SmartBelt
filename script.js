@@ -156,6 +156,28 @@ fetcher(url)
       tri_prix_ordre_decroissant();
     });
 
+    const minPrice = document.querySelector("#Min");
+    minPrice.addEventListener("keyup", (e) => {
+      clean_products_card();
+      to_display_products = prod.filter((element) => {
+        if (e.target.value < element.price) {
+          return element;
+        }
+      });
+      display_products_card();
+    });
+
+    const maxPrice = document.querySelector("#Max");
+    maxPrice.addEventListener("keyup", (e) => {
+      clean_products_card();
+      to_display_products = prod.filter((element) => {
+        if (e.target.value > element.price) {
+          return element;
+        }
+      });
+      display_products_card();
+    });
+
     $(".card").animate(
       {
         opacity: 1,
@@ -167,6 +189,7 @@ fetcher(url)
       }
     );
   })
+
   .catch((error) => {
     console.log(error.message);
   });
