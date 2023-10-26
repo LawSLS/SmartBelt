@@ -60,19 +60,20 @@
                   class="btn me-md-2"
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-cart2"
-                    viewBox="0 0 16 16"
                   >
-                    <path
-                      d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
-                    />
-                  </svg>
+
+                  <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-cart2"
+                  viewBox="0 0 16 16"
+                  >
+                  <path
+                  d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
+                  />
+                </svg>
                 </button>
               </div>
             </div>
@@ -87,7 +88,7 @@
         <div class="modal-content">
           <!-- Titre pas obligatoire -->
           <div class="modal-header"> 
-            <h1 class="modal-title fs-5 m-auto" id="exampleModalLabel">Votre panier : (Nbr d'articles)</h1>
+            <h1 class="modal-title fs-5 m-auto" id="nb-article"></h1>
             <!-- Nbr articles à remplacer par une balise pour dynamisme -->
           </div>
           <div class="modal-body">
@@ -98,24 +99,15 @@
                     <div class="d-flex justify-content-between align-items-center mb-4">
                       <div>
                         <p class="mb-0">
-                          <div class="btn-group">
-                              <button type="button" class="btn">Trier par :</button>
-                              <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="visually-hidden">Toggle Dropdown</span>
-                              </button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Taille</a></li>
-                                <li><a class="dropdown-item" href="#">Prix</a></li>
-                              </ul>
-                            </div>
+         
                         </p>
                       </div>
                     </div>
 
                     <div id="cart" class="card rounded-3 mb-4">
                       <div class="card-body p-4">
-                        <!-- <div class="row d-flex justify-content-between align-items-center">
-                          <div class="col-md-2 col-lg-2 col-xl-2">
+                        <div class="row d-flex justify-content-between align-items-center">
+                          <!-- <div class="col-md-2 col-lg-2 col-xl-2">
                             <img
                               src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
                               class="img-fluid rounded-3" alt="Cotton T-shirt" />
@@ -147,11 +139,14 @@
                           <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                             <a href="#!" class="text-dark"><i class="fas fa-trash fa-lg"></i></a>
                           </div>
+                        </div> -->
+                        <div id="total-cart">
+
                         </div>
-                      </div> -->
+                      </div>
                     </div>
 
-                    <div class="card mb-4">
+                    <div class="card mb-4 mx-auto">
                       <div class="card-body p-4 d-flex flex-row">
                         <div class="form-outline flex-fill">
                           <label class="form-label" for="form1">Code de réduction : </label>
@@ -165,10 +160,10 @@
                       </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card mx-auto">
                       <div class="card-body m-auto">
                         <button type="button" class="btn btn-dark btn-block">
-                          Passer au paiement
+                          <a href="checkout.html" class="text-decoration-none text-light">Passer au paiement</a> 
                         </button>
                       </div>
                     </div>
