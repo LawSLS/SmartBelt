@@ -129,7 +129,6 @@ function displayCartProduct(customerCart) {
     const productTitle = document.querySelector(`#title-${i}`);
 
     deleteCartBtn.addEventListener("click", (e) => {
-      console.log(e.target.id);
       e.target.remove();
 
       const cartItem = document.querySelector(`#cart-item-${i}`);
