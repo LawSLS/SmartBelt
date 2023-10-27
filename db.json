@@ -32,9 +32,9 @@
     },
     {
       "id": 3,
-      "title": "Ceinture en cuir Marron",
+      "title": "Ceinture Marron",
       "img": "./img/ceintureVintageFemme.jpg",
-      "description": "Ceinture vintage femme",
+      "description": "Ceinture vintage homme",
       "sexe": "homme",
       "categorie": "ceinture",
       "price": 80,

@@ -306,7 +306,6 @@ fetcher(url)
 
       const productToAdd = { img: imgProduct, title: title, price: price };
       cart.push(productToAdd);
-
       displayCartProduct(cart);
     });
     //------------------En add to cart-------------------
