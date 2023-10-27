@@ -144,7 +144,7 @@ function displayCartProduct(customerCart) {
     deleteCartBtn.addEventListener("click", () => {
       console.log(productTitle);
       cartItem.remove();
-      deleteProductCart(productTitle.innerHTML);
+      // deleteProductCart(productTitle.innerHTML);
     });
   }
 }

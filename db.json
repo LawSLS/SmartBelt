@@ -4,7 +4,7 @@
       "id": 0,
       "title": "Ceinture en cuir Marron",
       "img": "./img/ceintureFemmeGucci.jpg",
-      "description": "Ceinture en cuir marron",
+      "description": "Ceinture en cuir marron homme",
       "sexe": "homme",
       "categorie": "ceinture",
       "price": 99,
@@ -13,8 +13,8 @@
     {
       "id": 1,
       "title": "Ceinture en cuir Marron",
-      "img": "./img/ceintureFemmeGucci.jpg",
-      "description": "Ceinture Gucci",
+      "img": "./img/ceintureGC.jpg",
+      "description": "Ceinture Gucci femme",
       "sexe": "femme",
       "categorie": "ceinture",
       "price": 120,
@@ -88,6 +88,16 @@
       "sexe": "femme",
       "categorie": "Montre",
       "price": 2300,
+      "oldPrice": ""
+    },
+    {
+      "id": 7,
+      "title": "Sac Hermes ",
+      "img": "./img/Hermes-Special-Order-Potiron-and-Blue-Jean-Birkin-Bag.jpg",
+      "description": "Sac Hermes Femme",
+      "sexe": "femme",
+      "categorie": "Sac",
+      "price": 5000,
       "oldPrice": ""
     }
   ]
