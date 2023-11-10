@@ -28,7 +28,7 @@ async function getOneProduct(req, res) {
 
 async function addProduct(req, res) {
   try {
-    const product = new Product({
+    const product = await new Product({
       title: req.body.title,
       img: req.file.originalname,
       description: req.body.description,
@@ -37,7 +37,7 @@ async function addProduct(req, res) {
       price: req.body.price,
       oldPrice: req.body.oldPrice,
     });
-    await product.save();
+     product.save();
     res.send("Produit ajouté")
 
   }
@@ -48,4 +48,4 @@ async function addProduct(req, res) {
 
 
 
-module.exports = { getAllProducts, getOneProduct, addProduct };
+module.exports = {exampleController, getAllProducts, getOneProduct, addProduct };

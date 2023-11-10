@@ -4,7 +4,7 @@ const {
   getOneProduct,
   addProduct,
 } = require("../controllers/productsController");
-const upload = require("../middlewares/upload");
+const upload = require("../middlewares/multerMiddleware");
 
 function productsRoutes(app) {
   //All post routes CREATE
