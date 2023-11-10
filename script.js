@@ -312,6 +312,7 @@ fetcher(url)
 
       const productToAdd = { img: imgProduct, title: title, price: price };
       cart.push(productToAdd);
+      localStorage.setItem("cart", JSON.stringify(cart));
 
       displayCartProduct(cart);
     });
