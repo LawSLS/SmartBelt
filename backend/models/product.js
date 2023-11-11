@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+
 const ProductSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -24,13 +25,17 @@ const ProductSchema = new mongoose.Schema({
   },
   price: {
     type: Number,
-    required: true,
+    required:true,
+    validate: {
+      validator: function(value) {
+        return value > 0;
+      },
+      message: "Votre prix doit être supérieur à 0"
+    }
   },
-  oldPrice: {
-    type: Number,
-    required: true
-  },
+  oldPrice: Number,
 });
+
 
 const Product = new mongoose.model("Product", ProductSchema);
 

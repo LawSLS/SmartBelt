@@ -34,11 +34,11 @@ async function addProduct(req, res) {
       description: req.body.description,
       sexe: req.body.sexe,
       categorie: req.body.categorie,
-      price: req.body.price,
+      price: req.body.price, 
       oldPrice: req.body.oldPrice,
     });
      product.save();
-    res.send("Produit ajouté")
+    console.log(res.send("Produit ajouté"));
 
   }
   catch(error) {
