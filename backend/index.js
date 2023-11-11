@@ -3,13 +3,10 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
-const app = express();
-app.use(cors());
-
 const url = `mongodb+srv://andre75008:${process.env.PASS_DB}@cluster0.qeipciv.mongodb.net/`;
+const app = express();
 
-
-
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //routes
@@ -20,10 +17,10 @@ productsRoutes(app);
 const port = 3000;
 
 //Connection à la base de donnée
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }).catch((err) => {
+mongoose.connect(url).catch((err) => {
   console.log(err);
 });
 
 app.listen(port, () => {
-  console.log(`Server running on port${port}`);
+  console.log(`Server running on port ${port}`);
 });
