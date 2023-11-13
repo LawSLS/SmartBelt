@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //routes
 const productsRoutes = require("./routes/productsRoutes");
-const { error } = require("jquery");
+
 productsRoutes(app);
 
 const port = 3000;
