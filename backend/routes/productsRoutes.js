@@ -12,14 +12,12 @@ function productsRoutes(app) {
 
   //All get routes READ
   app.get("/exemple", exampleController);
-  app.get("api/products", getAllProducts);
+  app.get("/api/products", getAllProducts);
   app.get("/api/products/:id", getOneProduct);
 
   //All put routes UPDATE
 
   //All delete routes DELETE
 }
-
-
 
 module.exports = productsRoutes;

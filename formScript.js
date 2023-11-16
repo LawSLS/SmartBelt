@@ -3,7 +3,7 @@ document.getElementById("form").addEventListener("submit", function (e) {
 
   const formData = new FormData(this);
 
-  fetch("http://localhost:3000/api/addProduct", {
+  fetch("http://localhost:3050/api/addProduct", {
     method: "POST",
     body: formData,
   })

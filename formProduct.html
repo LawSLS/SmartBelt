@@ -16,7 +16,7 @@
     />
   </head>
   <body>
-    <!-- <form id="form">
+    <form id="form">
       <input type="text" placeholder="title" name="title" id="title" />
       <input type="file" placeholder="img" name="productImg" id="productImg" />
       <input
@@ -35,8 +35,8 @@
       <input type="text" placeholder="price" name="price" id="price" />
       <input type="text" placeholder="oldPrice" name="oldPrice" id="oldPrice" />
       <input type="submit" value="Enregistrer" />
-    </form> -->
-    <div class="row mx-auto p-2">
+    </form>
+    <!-- <div class="row mx-auto p-2">
       <div class="col">
         <form id="form">
           <div class="mb-3">
@@ -44,6 +44,7 @@
             <input
               type="text"
               class="form-control"
+              name="title"
               id="title"
               aria-describedby="titleHelp"
             />
@@ -55,13 +56,19 @@
             <label for="productImg" class="form-label"
               >Image de l'article</label
             >
-            <input type="file" class="form-control" id="productImg" />
+            <input
+              type="file"
+              class="form-control"
+              name="productImg"
+              id="productImg"
+            />
           </div>
           <div class="mb-3">
             <div class="form-floating">
               <textarea
                 class="form-control"
                 placeholder="Merci de décrire l'article"
+                name="description"
                 id="description"
                 style="height: 100px"
               ></textarea>
@@ -69,9 +76,9 @@
             </div>
           </div>
           <select class="form-select" aria-label="Default select example">
-            <option selected>genre</option>
-            <option value="homme">Masculin</option>
-            <option value="femme">Feminin</option>
+            <option>genre</option>
+            <option name="homme" value="homme">Masculin</option>
+            <option name="femme" value="femme">Feminin</option>
           </select>
           <div class="mb-3">
             <label for="categorie" class="form-label"
@@ -81,6 +88,7 @@
               type="text"
               class="form-control"
               id="categorie"
+              name="categorie"
               aria-describedby="categorieHelp"
             />
             <div id="categorieHelp" class="form-text">
@@ -92,6 +100,7 @@
             <input
               type="number"
               class="form-control"
+              name="price"
               id="price"
               aria-describedby="priceHelp"
             />
@@ -106,6 +115,7 @@
             <input
               type="number"
               class="form-control"
+              name="oldPrice"
               id="oldPrice"
               aria-describedby="oldPriceHelp"
             />
@@ -116,7 +126,7 @@
           <button type="submit" class="btn btn-primary">Enregistrer</button>
         </form>
       </div>
-    </div>
+    </div> -->
 
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
