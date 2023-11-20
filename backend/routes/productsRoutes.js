@@ -6,7 +6,7 @@ const {
   updateProduct,
   deleteProduct,
 } = require("../controllers/productsController");
-const upload = require("../middlewares/upload");
+const upload = require("../middlewares/multerMiddleware");
 
 function productsRoutes(app) {
   //All post routes CREATE
@@ -14,7 +14,7 @@ function productsRoutes(app) {
 
   //All get routes READ
   app.get("/exemple", exampleController);
-  app.get("api/products", getAllProducts);
+  app.get("/api/products", getAllProducts);
   app.get("/api/products/:id", getOneProduct);
 
   //All put routes UPDATE
@@ -23,9 +23,9 @@ function productsRoutes(app) {
     upload.single("productImg"),
     updateProduct
   );
-}
 
-//All delete routes DELETE
-app.delete("/api/deleteProduct/:id", deleteProduct);
+  //All delete routes DELETE
+  app.delete("/api/deleteProduct/:id", deleteProduct);
+}
 
 module.exports = productsRoutes;

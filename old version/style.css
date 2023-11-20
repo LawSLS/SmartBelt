@@ -1,0 +1,13 @@
+.card-img {
+  height: 8rem;
+  width: 4rem;
+}
+
+.logo-size {
+  height: 25px;
+}
+
+.cardIcon:hover {
+  transform: translate(0, -0.2rem);
+  transition: 0.5s;
+}

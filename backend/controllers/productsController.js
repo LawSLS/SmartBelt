@@ -1,4 +1,5 @@
 const Product = require("../models");
+require("dotenv").config();
 
 function exampleController(req, res) {
   res.send("Hello World!");
@@ -7,8 +8,8 @@ function exampleController(req, res) {
 // requetes GET
 async function getAllProducts(req, res) {
   try {
-    await Product.find();
-    res.send();
+    const product = await Product.find();
+    res.send(product);
   } catch (error) {
     console.log(
       "Une erreur est survenue lors de la récupération des produits " + error
@@ -30,9 +31,9 @@ async function getOneProduct(req, res) {
 
 async function addProduct(req, res) {
   try {
-    const product = new Product({
+    const product = await new Product({
       title: req.body.title,
-      img: req.file.originalname,
+      img: req.file.orinalname,
       description: req.body.description,
       sexe: req.body.sexe,
       categorie: req.body.categorie,
@@ -78,4 +79,5 @@ module.exports = {
   addProduct,
   updateProduct,
   deleteProduct,
+  exampleController,
 };

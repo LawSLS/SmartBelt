@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <form id="form">
+      <input type="text" placeholder="title" name="title" id="title" />
+      <input type="file" placeholder="img" name="productImg" id="productImg" />
+      <input
+        type="text"
+        placeholder="description"
+        name="description"
+        id="description"
+      />
+      <input type="text" placeholder="sexe" name="sexe" id="sexe" />
+      <input
+        type="text"
+        placeholder="categorie"
+        name="categorie"
+        id="categorie"
+      />
+      <input type="text" placeholder="price" name="price" id="price" />
+      <input type="text" placeholder="oldPrice" name="oldPrice" id="oldPrice" />
+      <input type="submit" value="Enregistrer" />
+    </form>
+    <!-- <div class="row mx-auto p-2">
+      <div class="col">
+        <form id="form">
+          <div class="mb-3">
+            <label for="title" class="form-label">Titre de l'article</label>
+            <input
+              type="text"
+              class="form-control"
+              name="title"
+              id="title"
+              aria-describedby="titleHelp"
+            />
+            <div id="titleHelp" class="form-text">
+              Ajouter un titre à l'article
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="productImg" class="form-label"
+              >Image de l'article</label
+            >
+            <input
+              type="file"
+              class="form-control"
+              name="productImg"
+              id="productImg"
+            />
+          </div>
+          <div class="mb-3">
+            <div class="form-floating">
+              <textarea
+                class="form-control"
+                placeholder="Merci de décrire l'article"
+                name="description"
+                id="description"
+                style="height: 100px"
+              ></textarea>
+              <label for="description">Description de l'article</label>
+            </div>
+          </div>
+          <select class="form-select" aria-label="Default select example">
+            <option>genre</option>
+            <option name="homme" value="homme">Masculin</option>
+            <option name="femme" value="femme">Feminin</option>
+          </select>
+          <div class="mb-3">
+            <label for="categorie" class="form-label"
+              >Categorie de l'article</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="categorie"
+              name="categorie"
+              aria-describedby="categorieHelp"
+            />
+            <div id="categorieHelp" class="form-text">
+              Ajouter une categorie
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Prix</label>
+            <input
+              type="number"
+              class="form-control"
+              name="price"
+              id="price"
+              aria-describedby="priceHelp"
+            />
+            <div id="priceHelp" class="form-text">
+              Ajouter le prix de l'article
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="oldPrice" class="form-label"
+              >Prix avant reduction</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              name="oldPrice"
+              id="oldPrice"
+              aria-describedby="oldPriceHelp"
+            />
+            <div id="oldPriceHelp" class="form-text">
+              Ajouter un prix avant la reduction
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </form>
+      </div>
+    </div> -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="formScript.js"></script>
+  </body>
+</html>
