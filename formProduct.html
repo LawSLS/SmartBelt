@@ -75,11 +75,19 @@
               <label for="description">Description de l'article</label>
             </div>
           </div>
-          <select class="form-select" aria-label="Default select example">
-            <option>genre</option>
-            <option name="homme" value="homme">Masculin</option>
-            <option name="femme" value="femme">Feminin</option>
-          </select>
+          <div class="mb-3">
+            <label for="sexe" class="form-label">Sexe</label>
+            <input
+              type="text"
+              class="form-control"
+              name="sexe"
+              id="sese"
+              aria-describedby="sexeHelp"
+            />
+            <div id="sexeHelp" class="form-text">
+              home ou femme
+            </div>
+          </div>
           <div class="mb-3">
             <label for="categorie" class="form-label"
               >Categorie de l'article</label

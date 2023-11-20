@@ -1,0 +1,22 @@
+#form {
+  border-radius: 2rem;
+  padding: 3rem;
+}
+
+#form button {
+  background: black;
+  color: white;
+  font-family: "Maarcellus", serif;
+  font-size: 16px;
+}
+
+#form input {
+  box-shadow: 0px 0px 26px -3px rgba(0, 0, 0, 0.2);
+}
+
+.form-container {
+  background: #fbe13f;
+  border-radius: 2rem;
+  padding: 2rem;
+  box-shadow: 0px 0px 26px -3px rgba(0, 0, 0, 0.3);
+}

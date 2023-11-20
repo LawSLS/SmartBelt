@@ -17,7 +17,7 @@ const ProductsList = () => {
   console.log(productList);
 
   return (
-    <div className="container">
+    <div className="container wrapper">
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 p-4 g-2 text center">
         {productList.map((product) => {
           return (
