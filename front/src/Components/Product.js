@@ -13,7 +13,7 @@ const Product = (props) => {
   return (
     <div className="card shadow border-0" style={{ width: "18rem" }}>
       <img
-        className="card-img-top"
+        className="card-img-top img-size"
         src={productImg}
         alt={props.product.title}
       />
