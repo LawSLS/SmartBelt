@@ -17,19 +17,19 @@ function App() {
 
   return (
     <div className="App">
+      <BrowserRouter>
       <priceFilterContext.Provider value={{filter, setFilter}}>
       <genderFilterContext.Provider value={{genderFilter, setGenderFilter}}>
       <searchFilterContext.Provider value={{searchFilter, setSearchFilter}}>
-      <BrowserRouter>
         <Navbar />
         <Routes>
           <Route path="/" element={<ProductPage />} />
           <Route path="/addProduct" element={<FormProductPage />} />
         </Routes>
-      </BrowserRouter>
       </searchFilterContext.Provider>
       </genderFilterContext.Provider>
       </priceFilterContext.Provider>
+      </BrowserRouter>
     </div>
   );
 }

@@ -29,7 +29,7 @@ const ProductSchema = new mongoose.Schema({
   },
   oldPrice: {
     type: Number,
-    required: true,
+    required: false,
   },
 });
 

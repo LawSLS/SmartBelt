@@ -10,17 +10,17 @@ function Filter() {
 
     
   return (
-    <div className="row m-3">
-      <button type="button" className="rounded-pill col-1 btn btn-outline-dark m-2" onClick={() => setFilter("Croissant")}>
-        Prix Croissant
+    <div className="row m-3 btnGroup align-items-center">
+      <button type="button" className="rounded-pill col col-lg-1 btn btn-sm btn-outline-dark m-3" onClick={() => setFilter("Croissant")}>
+        Prix &#x279A;
       </button>
-      <button type="button" className="rounded-pill col-1 btn btn-outline-dark m-2" onClick={() => setFilter("Decroissant")}>
-        Prix Décroissant
+      <button type="button" className="rounded-pill col col-lg-1 btn btn-sm btn-outline-dark m-3" onClick={() => setFilter("Decroissant")}>
+        Prix &#x2798;
       </button>
-      <button type="button" className="rounded-pill col-1 btn btn-outline-dark m-2" onClick={() => setGenderFilter("Homme")}>
+      <button type="button" className="rounded-pill col col-lg-1 btn btn-sm btn-outline-dark m-3" onClick={() => setGenderFilter("Homme")}>
         Homme
       </button>
-      <button type="button" className="rounded-pill col-1 btn btn-outline-dark m-2" onClick={() => setGenderFilter("Femme")}>
+      <button type="button" className="rounded-pill col col-lg-1 btn btn-sm btn-outline-dark m-3" onClick={() => setGenderFilter("Femme")}>
         Femme
       </button>
       <nav class="navbar col-4">

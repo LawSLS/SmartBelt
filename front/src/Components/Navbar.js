@@ -11,7 +11,7 @@ const Navbar = () => {
           <span className="fw-medium fs-6">Mon compte</span>
           <span className="fw-medium fs-6 ps-2">A propos</span>
         </div>
-        <Link to="/" class="navbar-brand" href="#">
+        <Link to="/">
           <img
             src={logo}
             width="140"
