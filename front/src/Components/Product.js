@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./css/Product.css";
 
+
 const Product = (props) => {
   const [productImg, setProductImg] = useState("");
+ 
 
   const img = props.product.img;
   useEffect(() => {

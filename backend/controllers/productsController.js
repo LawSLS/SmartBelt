@@ -33,7 +33,7 @@ async function addProduct(req, res) {
   try {
     const product = await new Product({
       title: req.body.title,
-      img: req.file.orinalname,
+      img: req.file.originalname,
       description: req.body.description,
       sexe: req.body.sexe,
       categorie: req.body.categorie,
