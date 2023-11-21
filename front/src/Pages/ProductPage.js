@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ProductsList from "../Components/ProductsList";
 import "./css/ProductPage.css";
 
 const ProductPage = () => {
-  useEffect(() => {
-    // function displayTextBanner() {
-    //   const reveal = document.querySelector(".reveal");
-    //   if (window.scrollY > 200) {
-    //     reveal.setAttribute("visually-hidden", "");
-    //   }
-    // }
-    // displayTextBanner();
-    // console.log(window.scrollY);
-    // window.addEventListener("scroll", displayTextBanner);
-  }, []);
+  // useEffect(() => {
+  //   function displayTextBanner() {
+  //     const reveal = document.querySelector(".reveal");
+  //     if (window.scrollY > 200) {
+  //       reveal.setAttribute("visually-hidden", "");
+  //     }
+  //   }
+  //   displayTextBanner();
+  //   console.log(window.scrollY);
+  //   window.addEventListener("scroll", displayTextBanner);
+  // }, []);
 
   return (
     <div>

@@ -16,7 +16,7 @@ const Navbar = () => {
             src={logo}
             width="140"
             height="30"
-            class="d-inline-block align-top"
+            className="d-inline-block align-top"
             alt="logo"
           />
         </Link>

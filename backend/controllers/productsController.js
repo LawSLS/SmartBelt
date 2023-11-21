@@ -33,23 +33,51 @@ async function addProduct(req, res) {
   try {
     const product = await new Product({
       title: req.body.title,
-      img: req.file.orinalname,
+      img: req.file.originalname,
       description: req.body.description,
       sexe: req.body.sexe,
       categorie: req.body.categorie,
       price: req.body.price,
       oldPrice: req.body.oldPrice,
     });
-    product.save();
+    await product.save();
     res.send("Produit ajouté");
   } catch (error) {
     console.log("Une erreur est survenue lors de l'ajout du produit " + error);
   }
 }
 
+// requetes PATCH
+
+async function updateProduct(req, res) {
+  try {
+    await Product.findByIdAndUpdate(req.params.id, {
+      title: req.body.title,
+      img: req.file.originalname,
+      description: req.body.description,
+      sexe: req.body.sexe,
+      categorie: req.body.categorie,
+      price: req.body.price,
+      oldPrice: req.body.oldPrice,
+    });
+    res.send("Produit correctement mis à jour");
+  } catch (error) {
+    coonsole.log(
+      "Une erreur est survenue lors de la mise à jour du produit " + error
+    );
+  }
+}
+
+//Requete delete :
+const deleteProduct = async (req, res) => {
+  req.send(await Product.findByIdAndDelete(req.params.id));
+};
+
 module.exports = {
-  exampleController,
   getAllProducts,
   getOneProduct,
   addProduct,
+  updateProduct,
+  deleteProduct,
+  exampleController,
 };

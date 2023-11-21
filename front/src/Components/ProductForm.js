@@ -4,12 +4,12 @@ import "./css/ProductForm.css";
 const ProductForm = () => {
   const formData = new FormData();
   return (
-    <div className="row mx-auto p-5 justify-content-evenly">
-      <div className="col-6 d-flex flex-column justify-content-center ">
+    <div className="row mx-auto p-5 justify-content-evenly align-items-center">
+      <div className="col-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center ">
         <h2>Ajouter un article</h2>
         <p>petite phrase</p>
       </div>
-      <div className="col-6 form-container">
+      <div className="col-12 col-md-12 col-lg-6 form-container">
         <div className="">
           <form id="form">
             <div class="mb-3">
