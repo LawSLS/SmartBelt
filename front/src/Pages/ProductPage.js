@@ -1,20 +1,13 @@
 import React, { useEffect } from "react";
 import ProductsList from "../Components/ProductsList";
 import "./css/ProductPage.css";
+import Filter from "../Components/Filter"
+
+
+
 
 const ProductPage = () => {
-  // useEffect(() => {
-  //   function displayTextBanner() {
-  //     const reveal = document.querySelector(".reveal");
-  //     if (window.scrollY > 200) {
-  //       reveal.setAttribute("visually-hidden", "");
-  //     }
-  //   }
-  //   displayTextBanner();
-  //   console.log(window.scrollY);
-  //   window.addEventListener("scroll", displayTextBanner);
-  // }, []);
-
+  
   return (
     <div>
       <div className="container-fluid bannerContainer m-0 p-0">
@@ -41,6 +34,9 @@ const ProductPage = () => {
           </div>
         </div> */}
       </div>
+      <div>
+      <Filter />
+    </div>
       <div className="displayProduct">
         <h2 className="h2 fw-bold titleCatalogue">Catalogue produit</h2>
 
@@ -51,3 +47,4 @@ const ProductPage = () => {
 };
 
 export default ProductPage;
+

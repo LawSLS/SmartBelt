@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./css/Product.css";
 
+
 const Product = (props) => {
   const [productImg, setProductImg] = useState("");
+ 
 
   useEffect(() => {
     fetch(`http://localhost:3050/${props.product.img}`).then((data) => {
