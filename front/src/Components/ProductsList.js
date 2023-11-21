@@ -2,11 +2,16 @@ import React, { useEffect, useState, useContext } from "react";
 import "./css/ProductsList.css";
 import Product from "./Product";
 import fetcher from "../Services/fetcher";
-import { priceFilterContext, genderFilterContext } from "../App";
+import {
+  priceFilterContext,
+  genderFilterContext,
+  searchFilterContext,
+} from "../App";
 
 const ProductsList = () => {
   const { filter, setFilter } = useContext(priceFilterContext);
   const { genderFilter, setGenderFilter } = useContext(genderFilterContext);
+  const { searchFilter, setSearchFilter } = useContext(searchFilterContext);
   const [productList, setProductList] = useState([]);
 
   useEffect(() => {
@@ -57,6 +62,11 @@ const ProductsList = () => {
     }
   };
 
+  const MinMaxSorting = (a, b) => {
+    if (filter === "Croissant") return a.price > b.price;
+    return a.price < b.price;
+  };
+
   const genderFiltred = (t) => {
     if (genderFilter === "Femme" || genderFilter === "Homme") {
       console.log(t);
@@ -73,32 +83,64 @@ const ProductsList = () => {
         });
     }
   };
+  const genderFiltering = (t) => {
+    return t.sexe === genderFilter.toLowerCase() || genderFilter == "";
+  };
+
+  const searchFiltering = (t) => {
+    return t.title.toLowerCase().match(searchFilter.toLowerCase());
+  };
+
+  const searchFiltered = (t) => {
+    if (searchFilter.length > 0) {
+      return t
+        .filter((product) => {
+          console.log(searchFilter);
+          console.log(product);
+          return product.title.match(searchFilter);
+        })
+        .map((filteredProduct) => {
+          return (
+            <div className="col">
+              console.log(filteredProduct._id);
+              <Product key={filteredProduct._id} product={filteredProduct} />
+            </div>
+          );
+        });
+    }
+  };
 
   const Prix = filtrePrix(productList);
   const Gender = genderFiltred(productList);
-  
-  function allFilters () {
-   if(genderFilter.length > 0 ) {
-    return Gender;
-   } else if(filter.length > 0){
-    return Prix;
-   }
-  }
+  const Search = searchFiltered(productList);
 
+  // function allFilters() {
+  //   if (genderFilter.length > 0) {
+  //     return Gender;
+  //   } else if (filter.length > 0) {
+  //     return Prix;
+  //   } else if (searchFilter.length > 0) {
+  //     return Search;
+  //   }
+  // }
 
   return (
     <div className="container">
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 p-4 g-2 text center">
-        { genderFilter ===""  && filter ==="" ?
-           productList.map((product) => {
+        {productList
+          .filter((x) => {
+            return genderFiltering(x) && searchFiltering(x);
+          })
+          .sort((a, b) => {
+            MinMaxSorting(a, b);
+          })
+          .map((product) => {
             return (
               <div className="col">
                 <Product key={product._id} product={product} />
               </div>
             );
-          }): allFilters()
-          
-         }
+          })}
       </div>
     </div>
   );

@@ -7,16 +7,19 @@ import React, { useState } from "react";
 
 const priceFilterContext = React.createContext();
 const genderFilterContext = React.createContext();
+const searchFilterContext = React.createContext();
 
 function App() {
   const [filter, setFilter] = useState("");
   const [genderFilter, setGenderFilter] = useState("");
+  const [searchFilter, setSearchFilter] = useState("");
 
 
   return (
     <div className="App">
       <priceFilterContext.Provider value={{filter, setFilter}}>
-        <genderFilterContext.Provider value={{genderFilter, setGenderFilter}}>
+      <genderFilterContext.Provider value={{genderFilter, setGenderFilter}}>
+      <searchFilterContext.Provider value={{searchFilter, setSearchFilter}}>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -24,6 +27,7 @@ function App() {
           <Route path="/addProduct" element={<FormProductPage />} />
         </Routes>
       </BrowserRouter>
+      </searchFilterContext.Provider>
       </genderFilterContext.Provider>
       </priceFilterContext.Provider>
     </div>
@@ -31,4 +35,4 @@ function App() {
 }
 
 export default App;
-export {priceFilterContext, genderFilterContext};
+export {priceFilterContext, genderFilterContext, searchFilterContext};
