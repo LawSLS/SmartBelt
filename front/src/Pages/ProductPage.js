@@ -1,15 +1,11 @@
 import React, { useEffect } from "react";
 import ProductsList from "../Components/ProductsList";
 import "./css/ProductPage.css";
-import Filter from "../Components/Filter"
-
-
-
+import Filter from "../Components/Filter";
 
 const ProductPage = () => {
-  
   return (
-    <div>
+    <div className="z-3">
       <div className="container-fluid bannerContainer m-0 p-0">
         {/* <div className="row reveal">
           <div className="col bannerContent" id="bannerContent">
@@ -34,12 +30,15 @@ const ProductPage = () => {
           </div>
         </div> */}
       </div>
+      <div className="row">
+        <div className="col-12 text-center">
+          <h2 className="h2 fw-bold titleCatalogue">Catalogue produit</h2>
+        </div>
+      </div>
       <div>
-      <Filter />
-    </div>
+        <Filter />
+      </div>
       <div className="displayProduct">
-        <h2 className="h2 fw-bold titleCatalogue">Catalogue produit</h2>
-
         <ProductsList />
       </div>
     </div>
@@ -47,4 +46,3 @@ const ProductPage = () => {
 };
 
 export default ProductPage;
-

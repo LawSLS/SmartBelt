@@ -6,9 +6,9 @@
   background-attachment: fixed;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 470px) {
   .bannerContainer {
-    height: 20rem;
+    height: 10rem;
     background-image: url("../../Assets/banner-presentation.jpg");
     background-repeat: no-repeat;
     background-size: contain;
@@ -41,7 +41,6 @@
 .titleCatalogue {
   font-size: 45px;
   color: rgb(60, 60, 60);
-  margin-left: 6rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }

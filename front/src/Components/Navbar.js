@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <nav class="navbar p-3 sticky-top navbar-expand-lg justify-content-around navigation">
+      <nav className="navbar p-3 z-1 sticky-top navbar-expand-lg justify-content-around navigation ">
         <div class="container">
           <div className="row">
             <div className="col">
@@ -62,8 +62,8 @@ const Navbar = () => {
       </nav>
       <div class="collapse bg-white" id="collapseExample">
         <ul className="list-unstyled ms-3">
-          <li>Mon compte</li>
-          <li>A propos de</li>
+          <li className="fs-6 fw-semi-bold ">Mon compte</li>
+          <li className="fs-6 fw-semi-bold ">A propos de</li>
         </ul>
       </div>
     </>
