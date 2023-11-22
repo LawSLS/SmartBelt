@@ -21,9 +21,12 @@ const Product = (props) => {
   }, []);
 
   return (
-    <div className="card shadow border-0" style={{ width: "18rem" }}>
+    <div
+      className="card shadow border-0 overflow-hidden"
+      style={{ width: "18rem" }}
+    >
       <img
-        className="card-img-top"
+        className="card-img-top img-size imgStyle"
         src={productImg}
         alt={props.product.title}
       />

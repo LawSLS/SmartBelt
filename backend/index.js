@@ -4,7 +4,6 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 const port = 3050;
-
 const url = `mongodb+srv://andre75008:${process.env.PASS_DB}@cluster0.qeipciv.mongodb.net/`;
 const path = require("path");
 const app = express();

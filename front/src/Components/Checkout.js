@@ -1,0 +1,306 @@
+import React from "react";
+
+function checkout() {
+  return (
+    <div>
+      <div class="py-5 text-center">
+        <h2>Ma commande</h2>
+      </div>
+
+      <div class="row justify-content-end m-5">
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Votre panier</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Sac à main Hermès</h6>
+                <small class="text-muted">Un jolie sac</small>
+              </div>
+              <span class="text-muted">8 000€</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Montre Rolex Submariner</h6>
+                <small class="text-muted">Une jolie montre</small>
+              </div>
+              <span class="text-muted">30 000€</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Bague Dior</h6>
+                <small class="text-muted">un jolie bague</small>
+              </div>
+              <span class="text-muted">1 200€</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0">Code promo</h6>
+                <small>Code validé</small>
+              </div>
+              <span class="text-success">-1€</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total (EUR)</span>
+              <strong>39 199€</strong>
+            </li>
+          </ul>
+        </div>
+        <div className="col-6"></div>
+
+        <form class="card p-2 col-lg-3">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Code promo" />
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-secondary">
+                Appliquer
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Adresse de facturation</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Prénom</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder=""
+                  value=""
+                  required
+                />
+                <div class="invalid-feedback">
+                  Merci de rentrer un prénom valide
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Nom</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder=""
+                  value=""
+                  required
+                />
+                <div class="invalid-feedback">
+                  Merci de rentrer un nom valide
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3 col-5">
+              <label for="username">Nom d'utilisateur</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">@</span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  placeholder="Nom d'utilisateur"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Votre nom d'utilisateur est requis.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3 col-5">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="toto@example.com"
+              />
+              <div class="invalid-feedback">
+                Merci de rentrer une adresse email valide
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Addresse</label>
+              <input
+                type="text"
+                class="form-control"
+                id="address"
+                placeholder="42 boulevard Général de Gaulle"
+                required
+              />
+              <div class="invalid-feedback">Votre adresse de livraison.</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label for="country">Pays</label>
+                <select
+                  class="custom-select d-block w-100"
+                  id="country"
+                  required
+                >
+                  <option value="">Pays...</option>
+                  <option>France</option>
+                  <option>Belgique</option>
+                  <option>Espagne</option>
+                  <option>USA</option>
+                </select>
+                <div class="invalid-feedback">
+                  Merci de selectionner un pays valide
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="state">Ville</label>
+                <select class="custom-select d-block w-100" id="state" required>
+                  <option value="">Choisir...</option>
+                  <option>California</option>
+                </select>
+                <div class="invalid-feedback">
+                  Merci de choisir une ville valide
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="zip">Code postal</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="zip"
+                  placeholder=""
+                  required
+                />
+                <div class="invalid-feedback">code postal requis</div>
+              </div>
+            </div>
+
+            <div class="custom-control custom-checkbox">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="same-address"
+              />
+              <label class="custom-control-label" for="same-address">
+                L'adresse de facturation et de livraison sont les mêmes.
+              </label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input
+                type="checkbox"
+                class="custom-control-input"
+                id="save-info"
+              />
+              <label class="custom-control-label" for="save-info">
+                Enregistrer ces informations pour la prochaine fois
+              </label>
+            </div>
+
+            <h4 class="mb-3">Paiment</h4>
+
+            <div class="d-block my-3">
+              <div class="custom-control custom-radio">
+                <input
+                  id="credit"
+                  name="paymentMethod"
+                  type="radio"
+                  class="custom-control-input"
+                  checked
+                  required
+                />
+                <label class="custom-control-label" for="credit">
+                  Carte bancaire
+                </label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input
+                  id="debit"
+                  name="paymentMethod"
+                  type="radio"
+                  class="custom-control-input"
+                  required
+                />
+                <label class="custom-control-label" for="debit">
+                  Bitcoin
+                </label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input
+                  id="paypal"
+                  name="paymentMethod"
+                  type="radio"
+                  class="custom-control-input"
+                  required
+                />
+                <label class="custom-control-label" for="paypal">
+                  Paypal
+                </label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="cc-name">Nom sur la carte bancaire</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-name"
+                  placeholder=""
+                  required
+                />
+                <small class="text-muted">Nom complet sur la carte</small>
+                <div class="invalid-feedback">Name on card is required</div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number">Numéro sur la carte bancaire</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-number"
+                  placeholder=""
+                  required
+                />
+                <div class="invalid-feedback">Numero de la carte</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label for="cc-expiration">Expiration</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-expiration"
+                  placeholder=""
+                  required
+                />
+                <div class="invalid-feedback">Date d'expiration requis</div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="cc-expiration">CVV</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-cvv"
+                  placeholder=""
+                  required
+                />
+                <div class="invalid-feedback">Code de sécurité requis</div>
+              </div>
+            </div>
+
+            <button class="btn btn-outline-dark btn-lg btn-block" type="submit">
+              Confirmer
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default checkout;

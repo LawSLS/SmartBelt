@@ -1,3 +1,17 @@
 .btnCard {
   background: #ededed;
 }
+
+.img-size {
+  height: 18rem;
+}
+
+.imgStyle {
+  width: 100%;
+  cursor: pointer;
+}
+
+.imgStyle:hover {
+  transform: scale(1.1, 1.1);
+  transition: 1.5s;
+}

@@ -6,6 +6,16 @@
   background-attachment: fixed;
 }
 
+@media screen and (max-width: 470px) {
+  .bannerContainer {
+    height: 10rem;
+    background-image: url("../../Assets/banner-presentation.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+  }
+}
+
 .bannerContent {
   margin-top: 6rem;
 }
@@ -31,7 +41,6 @@
 .titleCatalogue {
   font-size: 45px;
   color: rgb(60, 60, 60);
-  margin-left: 6rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
