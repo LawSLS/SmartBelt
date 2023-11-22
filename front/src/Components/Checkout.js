@@ -42,7 +42,7 @@ function checkout() {
                         {item.product.description}
                       </small>
                     </div>
-                    <span class="text-muted">{item.product.price}€</span>
+                    <span class="text-muted">{item?.product?.price * item.quantity}€</span>
                   </li>
                 </>
               );
