@@ -8,21 +8,19 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar p-3 sticky-top navbar-expand-lg justify-content-around navigation">
-        <div className="container">
-          <div className="col">jfighdsiughsdfihg</div>
-          <div className="col">
-            <Link to="/" class="navbar-brand" href="#">
-              <img
-                src={logo}
-                width="140"
-                height="30"
-                className="d-inline-block align-top"
-                alt="logo"
-              />
-            </Link>
-          </div>
+        <div>Mon compte</div>
+        <div>
+          <Link to="/" class="navbar-brand" href="#">
+            <img
+              src={logo}
+              width="140"
+              height="30"
+              className="d-inline-block align-top"
+              alt="logo"
+            />
+          </Link>
         </div>
-        <div className="col">
+        <div>
           <button
             type="button"
             className="btn cartButton rounded-pill"

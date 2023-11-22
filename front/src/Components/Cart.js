@@ -1,4 +1,4 @@
-import react, { useContext, useEffect } from "react";
+import react, { useContext, useEffect, useState } from "react";
 // Importer mes fonctions de Product.js :
 import {
   deleteproduct,
@@ -11,6 +11,7 @@ import { CartContext } from "../App";
 
 const Cart = () => {
   const { cart, setCart } = useContext(CartContext);
+
   function priceTotal() {
     let cart = getproducts();
     let price = 0;
@@ -42,12 +43,16 @@ const Cart = () => {
         <div className="offcanvas-body">
           <div className="card cart mb-3">
             <div className="row g-0">
-              <div className="col-md-4">
-                <img src="..." className="img-fluid rounded-start" alt="..." />
-              </div>
               {getproducts().map((item) => {
                 return (
                   <>
+                    <div className="col-md-4">
+                      <img
+                        src={`http://localhost:3050/` + item.product.img}
+                        className="img-fluid rounded-start"
+                        alt="..."
+                      />
+                    </div>
                     <div className="col-md-8">
                       <div className="card-body card shadow">
                         <div>

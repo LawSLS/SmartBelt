@@ -1,6 +1,24 @@
 import React from "react";
+// Importer mes fonctions de Product.js :
+import {
+  deleteproduct,
+  getproducts,
+  addQuantity,
+  subQuantity,
+} from "../Services/CartService";
+import "./css/Cart.css";
+import { CartContext } from "../App";
 
 function checkout() {
+  function priceTotal() {
+    let cart = getproducts();
+    let price = 0;
+    cart.map((item) => {
+      price += item.product.price * item.quantity;
+    });
+    return price;
+  }
+
   return (
     <div>
       <div class="py-5 text-center">
@@ -14,37 +32,25 @@ function checkout() {
             <span class="badge badge-secondary badge-pill">3</span>
           </h4>
           <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Sac à main Hermès</h6>
-                <small class="text-muted">Un jolie sac</small>
-              </div>
-              <span class="text-muted">8 000€</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Montre Rolex Submariner</h6>
-                <small class="text-muted">Une jolie montre</small>
-              </div>
-              <span class="text-muted">30 000€</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Bague Dior</h6>
-                <small class="text-muted">un jolie bague</small>
-              </div>
-              <span class="text-muted">1 200€</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between bg-light">
-              <div class="text-success">
-                <h6 class="my-0">Code promo</h6>
-                <small>Code validé</small>
-              </div>
-              <span class="text-success">-1€</span>
-            </li>
+            {getproducts().map((item) => {
+              return (
+                <>
+                  <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                      <h6 class="my-0">{item.product.title}</h6>
+                      <small class="text-muted">
+                        {item.product.description}
+                      </small>
+                    </div>
+                    <span class="text-muted">{item.product.price}€</span>
+                  </li>
+                </>
+              );
+            })}
+
             <li class="list-group-item d-flex justify-content-between">
               <span>Total (EUR)</span>
-              <strong>39 199€</strong>
+              <strong>{priceTotal()}€</strong>
             </li>
           </ul>
         </div>
