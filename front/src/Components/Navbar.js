@@ -43,7 +43,10 @@ const Navbar = () => {
             />
           </Link>
 
-          <button type="button" className="btn cartButton rounded-pill">
+          <button
+            type="button"
+            className="btn cartButton shadow-sm rounded-pill"
+          >
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
