@@ -35,14 +35,15 @@ const ProductForm = () => {
   };
 
   return (
-    <div className="row mx-auto p-5 justify-content-evenly align-items-center">
+    <div className="row mx-auto p-5 justify-content-evenly align-items-center pageWrapper">
       <div className="col-12 col-md-12 col-lg-6 d-flex flex-column justify-content-center ">
         <h2>Ajouter un article</h2>
-        <p>petite phrase</p>
+        <p className="text-secondary">Vous ajoutez quoi aujourd'hui ?</p>
       </div>
       <div className="col-12 col-md-12 col-lg-6 form-container">
         <div className="">
           <form className="form" id="form">
+            <h2 className="text-center text-white fs61">Formulaire</h2>
             <div className="mb-3">
               <input
                 type="text"

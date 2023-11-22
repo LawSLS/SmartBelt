@@ -1,3 +1,7 @@
+.pageWrapper {
+  height: 80vh;
+}
+
 #form {
   border-radius: 2rem;
   padding: 3rem;
