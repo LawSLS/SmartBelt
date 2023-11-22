@@ -1,0 +1,15 @@
+.cart {
+  background: #fdfdfd;
+  z-index: 2;
+  box-shadow: 3px 8px 15px -5px rgba(48, 48, 48, 0.2);
+}
+
+.cart .cart-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.cart .cart-text .price {
+  margin: auto;
+}

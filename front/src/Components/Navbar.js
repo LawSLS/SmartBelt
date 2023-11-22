@@ -2,6 +2,7 @@ import React from "react";
 import "./css/Navbar.css";
 import logo from "../Assets/logo.png";
 import { Link } from "react-router-dom";
+import Cart from "./Cart";
 
 const Navbar = () => {
   return (
@@ -20,7 +21,14 @@ const Navbar = () => {
             alt="logo"
           />
         </Link>
-        <button type="button" className="btn cartButton rounded-pill">
+        <button
+          type="button"
+          className="btn cartButton rounded-pill"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+        >
+          <Cart />
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

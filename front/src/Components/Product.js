@@ -1,9 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./css/Product.css";
+import { CartContext } from "../App";
+import { updateproduct, updateOrSaveQuantity } from "../Services/CartService";
 
 const Product = (props) => {
+  const { cart, setCart } = useContext(CartContext);
   const [productImg, setProductImg] = useState("");
 
+  function addBasket(product) {
+    let currentProduct = { product, quantity: 0 };
+    currentProduct.quantity = 1;
+    console.log("currentProduct :");
+    console.log(currentProduct);
+    setCart(updateOrSaveQuantity(currentProduct));
+  }
   useEffect(() => {
     fetch(`http://localhost:3050/${props.product.img}`).then((data) => {
       setProductImg(data.url);
@@ -37,7 +47,13 @@ const Product = (props) => {
             </span>
           </div>
           <span>
-            <button className="btn btn-sm btnCard ">
+            <button
+              onClick={() => {
+                addBasket(props.product);
+                // window.location.reload();
+              }}
+              className="btn btn-sm btnCard"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
