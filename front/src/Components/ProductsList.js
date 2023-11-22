@@ -17,11 +17,11 @@ const ProductsList = () => {
   console.log(productList);
 
   return (
-    <div className="container wrapper">
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 p-4 g-2 text center">
+    <div className="container">
+      <div className="row">
         {productList.map((product) => {
           return (
-            <div className="col">
+            <div className="col m-2 wrapper">
               <Product key={product._id} product={product} />
             </div>
           );

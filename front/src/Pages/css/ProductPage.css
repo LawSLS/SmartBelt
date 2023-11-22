@@ -6,6 +6,16 @@
   background-attachment: fixed;
 }
 
+@media screen and (max-width: 700px) {
+  .bannerContainer {
+    height: 20rem;
+    background-image: url("../../Assets/banner-presentation.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+  }
+}
+
 .bannerContent {
   margin-top: 6rem;
 }
