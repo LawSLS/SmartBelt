@@ -4,6 +4,7 @@ import ProductPage from "./Pages/ProductPage";
 import Navbar from "./Components/Navbar";
 import FormProductPage from "./Pages/FormProductPage";
 import React, { useState } from "react";
+import CheckoutPage from "./Pages/CheckoutPage";
 
 const priceFilterContext = React.createContext();
 const genderFilterContext = React.createContext();
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ProductPage />} />
           <Route path="/addProduct" element={<FormProductPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
         </Routes>
       </searchFilterContext.Provider>
       </genderFilterContext.Provider>
