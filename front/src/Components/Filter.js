@@ -51,7 +51,7 @@ function Filter() {
             placeholder="Search"
             aria-label="Search"
             value={searchFilter}
-            onChange={(e) => e.target.value.match(new RegExp('(^[a-zA-Z0-9]+$)')) || e.target.value ==="" ? setSearchFilter(e.target.value):console.log("erreur")}
+            onChange={(e) => e.target.value.match(new RegExp('(^[a-zA-Z0-9]+$)')) || e.target.value ==="" ? setSearchFilter(e.target.value):console.log("toto")}
           />
         </form>
       </nav>
