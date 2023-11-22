@@ -3,8 +3,23 @@ import "./css/Navbar.css";
 import logo from "../Assets/logo.png";
 import { Link } from "react-router-dom";
 import Cart from "./Cart";
+import {
+  deleteproduct,
+  getproducts,
+  addQuantity,
+  subQuantity,
+} from "../Services/CartService";
 
 const Navbar = () => {
+  function getTotalQuantity() {
+    let total = 0;
+    let productCart = getproducts();
+    productCart.map((item) => {
+      total += item.quantity;
+    });
+    return total;
+  }
+
   return (
     <>
       <nav className="navbar p-3 sticky-top navbar-expand-lg justify-content-around navigation">
@@ -23,11 +38,15 @@ const Navbar = () => {
         <div>
           <button
             type="button"
-            className="btn cartButton rounded-pill"
+            className="btn cartButton rounded-pill position-relative"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasRight"
             aria-controls="offcanvasRight"
           >
+            <span class="position-absolute bg-warning start-70 top-0 translate-middle badge rounded-pill">
+              <span class="fs-6 text-white">{getTotalQuantity()}</span>
+            </span>
+
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
