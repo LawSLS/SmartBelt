@@ -7,7 +7,7 @@ function checkout() {
         <h2>Ma commande</h2>
       </div>
 
-      <div class="row justify-content-end mx-auto">
+      <div class="row justify-content-end m-5">
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Votre panier</span>
@@ -76,7 +76,7 @@ function checkout() {
                   required
                 />
                 <div class="invalid-feedback">
-                  Valid first name is required.
+                  Merci de rentrer un prénom valide
                 </div>
               </div>
               <div class="col-md-6 mb-3">
@@ -89,7 +89,9 @@ function checkout() {
                   value=""
                   required
                 />
-                <div class="invalid-feedback">Valid last name is required.</div>
+                <div class="invalid-feedback">
+                  Merci de rentrer un nom valide
+                </div>
               </div>
             </div>
 
@@ -106,7 +108,9 @@ function checkout() {
                   placeholder="Nom d'utilisateur"
                   required
                 />
-                <div class="invalid-feedback">Your username is required.</div>
+                <div class="invalid-feedback">
+                  Votre nom d'utilisateur est requis.
+                </div>
               </div>
             </div>
 
@@ -119,7 +123,7 @@ function checkout() {
                 placeholder="toto@example.com"
               />
               <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
+                Merci de rentrer une adresse email valide
               </div>
             </div>
 
@@ -132,9 +136,7 @@ function checkout() {
                 placeholder="42 boulevard Général de Gaulle"
                 required
               />
-              <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>
+              <div class="invalid-feedback">Votre adresse de livraison.</div>
             </div>
 
             <div class="row">
@@ -152,17 +154,17 @@ function checkout() {
                   <option>USA</option>
                 </select>
                 <div class="invalid-feedback">
-                  Please select a valid country.
+                  Merci de selectionner un pays valide
                 </div>
               </div>
               <div class="col-md-4 mb-3">
-                <label for="state">State</label>
+                <label for="state">Ville</label>
                 <select class="custom-select d-block w-100" id="state" required>
-                  <option value="">Choose...</option>
+                  <option value="">Choisir...</option>
                   <option>California</option>
                 </select>
                 <div class="invalid-feedback">
-                  Please provide a valid state.
+                  Merci de choisir une ville valide
                 </div>
               </div>
               <div class="col-md-3 mb-3">
@@ -174,7 +176,7 @@ function checkout() {
                   placeholder=""
                   required
                 />
-                <div class="invalid-feedback">Zip code required.</div>
+                <div class="invalid-feedback">code postal requis</div>
               </div>
             </div>
 
@@ -251,7 +253,7 @@ function checkout() {
                   placeholder=""
                   required
                 />
-                <small class="text-muted">Full name as displayed on card</small>
+                <small class="text-muted">Nom complet sur la carte</small>
                 <div class="invalid-feedback">Name on card is required</div>
               </div>
               <div class="col-md-6 mb-3">
@@ -263,9 +265,7 @@ function checkout() {
                   placeholder=""
                   required
                 />
-                <div class="invalid-feedback">
-                  Credit card number is required
-                </div>
+                <div class="invalid-feedback">Numero de la carte</div>
               </div>
             </div>
             <div class="row">
@@ -278,7 +278,7 @@ function checkout() {
                   placeholder=""
                   required
                 />
-                <div class="invalid-feedback">Expiration date required</div>
+                <div class="invalid-feedback">Date d'expiration requis</div>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="cc-expiration">CVV</label>
@@ -289,12 +289,12 @@ function checkout() {
                   placeholder=""
                   required
                 />
-                <div class="invalid-feedback">Security code required</div>
+                <div class="invalid-feedback">Code de sécurité requis</div>
               </div>
             </div>
 
-            <button class="btn btn-primary btn-lg btn-block" type="submit">
-              Valider mes informations
+            <button class="btn btn-outline-dark btn-lg btn-block" type="submit">
+              Confirmer
             </button>
           </form>
         </div>
