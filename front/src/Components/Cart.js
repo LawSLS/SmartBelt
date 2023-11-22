@@ -8,6 +8,7 @@ import {
 } from "../Services/CartService";
 import "./css/Cart.css";
 import { CartContext } from "../App";
+import {Link} from "react-router-dom";
 
 const Cart = () => {
   const { cart, setCart } = useContext(CartContext);
@@ -104,6 +105,13 @@ const Cart = () => {
                 <p className="card-text cart-text d-flex justify-content-evenly text-center prix fw-bold">
                   Total du panier : {priceTotal()} €
                 </p>
+              </div>
+              <div className="row text-center">
+              <Link to="/checkout">
+              <button class="btn btn-outline-dark m-2 btn-lg btn-block" type="submit">
+              Confirmer
+            </button>
+            </Link>
               </div>
             </div>
           </div>
