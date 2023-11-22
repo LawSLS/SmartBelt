@@ -92,22 +92,24 @@ const ProductsList = () => {
   };
 
   const searchFiltered = (t) => {
-    if (searchFilter.length > 0) {
-      return t
-        .filter((product) => {
-          console.log(searchFilter);
-          console.log(product);
-          return product.title.match(searchFilter);
-        })
-        .map((filteredProduct) => {
-          return (
-            <div className="col">
-              console.log(filteredProduct._id);
-              <Product key={filteredProduct._id} product={filteredProduct} />
-            </div>
-          );
-        });
-    }
+  
+      if (searchFilter.length > 0) {
+        return t
+          .filter((product) => {
+            console.log(searchFilter);
+            console.log(product);
+            return product.title.match(searchFilter);
+          })
+          .map((filteredProduct) => {
+            return (
+              <div className="col">
+                console.log(filteredProduct._id);
+                <Product key={filteredProduct._id} product={filteredProduct} />
+              </div>
+            );
+          });
+      }
+   
   };
 
   const Prix = filtrePrix(productList);
