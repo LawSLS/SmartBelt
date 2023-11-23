@@ -17,28 +17,28 @@ function Filter() {
     <div className="row m-3 btnGroup justify-content-center align-items-center">
       <button
         type="button"
-        className="rounded-pill col col-lg-1 btn btn-sm btn-outline-dark m-3"
+        className="rounded-pill fw-bold col col-lg-1 btn btn-sm btn-outline-dark m-3"
         onClick={() => setFilter("Croissant")}
       >
         Prix &#x279A;
       </button>
       <button
         type="button"
-        className="rounded-pill col col-lg-1 btn btn-sm btn-outline-dark m-3"
+        className="rounded-pill fw-bold col col-lg-1 btn btn-sm btn-outline-dark m-3"
         onClick={() => setFilter("Decroissant")}
       >
         Prix &#x2798;
       </button>
       <button
         type="button"
-        className="rounded-pill col col-lg-1 btn btn-sm btn-outline-dark m-3"
+        className="rounded-pill fw-bold col col-lg-1 btn btn-sm btn-outline-dark m-3"
         onClick={() => setGenderFilter("Homme")}
       >
         Homme
       </button>
       <button
         type="button"
-        className="rounded-pill col col-lg-1 btn btn-sm btn-outline-dark m-3"
+        className="rounded-pill fw-bold col col-lg-1 btn btn-sm btn-outline-dark m-3"
         onClick={() => setGenderFilter("Femme")}
       >
         Femme
@@ -51,7 +51,12 @@ function Filter() {
             placeholder="Rechercher"
             aria-label="Search"
             value={searchFilter}
-            onChange={(e) => e.target.value.match(new RegExp('(^[a-zA-Z0-9]+$)')) || e.target.value ==="" ? setSearchFilter(e.target.value):console.log("toto")}
+            onChange={(e) =>
+              e.target.value.match(new RegExp("(^[a-zA-Z0-9]+$)")) ||
+              e.target.value === ""
+                ? setSearchFilter(e.target.value)
+                : console.log("toto")
+            }
           />
         </form>
       </nav>
