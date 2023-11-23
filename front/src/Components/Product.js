@@ -35,7 +35,7 @@ const Product = (props) => {
         <p className="card-text text-secondary">{props.product.description}</p>
         <div className="d-flex justify-content-around">
           <div>
-            <span class="fw-bold">{props.product.price}</span>
+            <span className="fw-bold">{props.product.price}</span>
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@ const Product = (props) => {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-cart-plus"
+                className="bi bi-cart-plus"
                 viewBox="0 0 16 16"
               >
                 <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />

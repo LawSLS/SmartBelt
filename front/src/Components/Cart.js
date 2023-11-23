@@ -26,7 +26,7 @@ const Cart = () => {
     <>
       <div
         className="offcanvas offcanvas-end"
-        tabindex="-1"
+        tabIndex="-1"
         id="offcanvasRight"
         aria-labelledby="offcanvasRightLabel"
       >
@@ -114,7 +114,7 @@ const Cart = () => {
               <div className="row text-center">
                 <Link to="/checkout">
                   <button
-                    class="btn btn-outline-dark m-2 btn-lg btn-block"
+                    className="btn btn-outline-dark m-2 btn-lg btn-block"
                     type="submit"
                   >
                     Confirmer

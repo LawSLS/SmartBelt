@@ -25,7 +25,7 @@ const Navbar = () => {
       <nav className="navbar p-3 sticky-top navbar-expand-lg justify-content-around navigation">
         <div>Mon compte</div>
         <div>
-          <Link to="/" class="navbar-brand" href="#">
+          <Link to="/" className="navbar-brand" href="#">
             <img
               src={logo}
               width="140"
@@ -43,8 +43,8 @@ const Navbar = () => {
             data-bs-target="#offcanvasRight"
             aria-controls="offcanvasRight"
           >
-            <span class="position-absolute bg-warning start-70 top-0 translate-middle badge rounded-pill">
-              <span class="fs-6 text-white">{getTotalQuantity()}</span>
+            <span className="position-absolute bg-warning start-70 top-0 translate-middle badge rounded-pill">
+              <span className="fs-6 text-white">{getTotalQuantity()}</span>
             </span>
 
             <span>
@@ -53,7 +53,7 @@ const Navbar = () => {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-handbag"
+                className="bi bi-handbag"
                 viewBox="0 0 16 16"
               >
                 <path d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2zm3 4V3a3 3 0 1 0-6 0v2H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 1 0 1 0V6h4z" />

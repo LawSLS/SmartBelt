@@ -46,4 +46,9 @@ function App() {
 }
 
 export default App;
-export { priceFilterContext, genderFilterContext, searchFilterContext, CartContext };
+export {
+  priceFilterContext,
+  genderFilterContext,
+  searchFilterContext,
+  CartContext,
+};

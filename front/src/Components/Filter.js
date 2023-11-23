@@ -43,10 +43,10 @@ function Filter() {
       >
         Femme
       </button>
-      <nav class="navbar col-12 col-lg-3">
-        <form class="col m-3" role="search">
+      <nav className="navbar col-12 col-lg-3">
+        <form className="col m-3" role="search">
           <input
-            class="form-control"
+            className="form-control"
             type="search"
             placeholder="Rechercher"
             aria-label="Search"

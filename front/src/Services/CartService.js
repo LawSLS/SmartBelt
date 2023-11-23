@@ -1,7 +1,7 @@
 // Function to retrieve products from localStorage
 function getproducts() {
   const products = localStorage.getItem("products");
-  console.log(products);
+
   if (products) {
     return JSON.parse(products);
   }
