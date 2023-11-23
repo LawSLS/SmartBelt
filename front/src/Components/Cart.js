@@ -8,7 +8,7 @@ import {
 } from "../Services/CartService";
 import "./css/Cart.css";
 import { CartContext } from "../App";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cart, setCart } = useContext(CartContext);
@@ -43,7 +43,7 @@ const Cart = () => {
         </div>
         <div className="offcanvas-body">
           <div className="card cart mb-3">
-            <div className="row g-0">
+            <div className="row g-4">
               {getproducts().map((item) => {
                 return (
                   <>
@@ -112,11 +112,14 @@ const Cart = () => {
                 </p>
               </div>
               <div className="row text-center">
-              <Link to="/checkout">
-              <button class="btn btn-outline-dark m-2 btn-lg btn-block" type="submit">
-              Confirmer
-            </button>
-            </Link>
+                <Link to="/checkout">
+                  <button
+                    class="btn btn-outline-dark m-2 btn-lg btn-block"
+                    type="submit"
+                  >
+                    Confirmer
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
